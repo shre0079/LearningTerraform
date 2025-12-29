@@ -1,14 +1,12 @@
 terraform {
 
-backend "s3" {
+  backend "s3" {
     bucket         = "shreyash-terraform-state-1234"
-    key            = "learning-terraform/webapp/dev/terraform.tfstate"
+    key            = "learning-terraform/import-bootstrap/terraform.tfstate"
     region         = "ap-south-1"
     dynamodb_table = "terraform-state-locking"
     encrypt        = true
   }
-
-
 
   required_providers {
     aws = {
@@ -27,7 +25,7 @@ resource "aws_s3_bucket" "terraform_state" {
   force_destroy = true
 }
 
-resource "aws_s3_bucket_versioning" "terraform_bucket_versionaing" {
+resource "aws_s3_bucket_versioning" "terraform_bucket_versioning" {
   bucket = aws_s3_bucket.terraform_state.id
   versioning_configuration {
     status = "Enabled"
