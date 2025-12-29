@@ -1,19 +1,11 @@
-# Terraform state files
+# Terraform
+**/.terraform/
 *.tfstate
 *.tfstate.*
-
-# Terraform crash logs
-crash.log
-
-# Terraform working directory
-.terraform/
-
-# Terraform variable files (often contain secrets)
 *.tfvars
 *.tfvars.json
 
-# CLI configuration files
-.terraformrc
-terraform.rc
-
-**/.terraform/
+# OS / IDE
+.vscode/
+.idea/
+*.log
